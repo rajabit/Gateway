@@ -7,12 +7,12 @@ use Illuminate\Support\ServiceProvider;
 
 class GatewayServiceProvider extends ServiceProvider
 {
-	/**
-	 * Indicates if loading of the provider is deferred.
-	 *
-	 * @var bool
-	 */
-	protected $defer = false;
+    /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected $defer = false;
 
     /**
      * Actual provider
@@ -24,7 +24,7 @@ class GatewayServiceProvider extends ServiceProvider
     /**
      * Create a new service provider instance.
      *
-     * @param  \Illuminate\Contracts\Foundation\Application  $app
+     * @param \Illuminate\Contracts\Foundation\Application $app
      * @return void
      */
     public function __construct($app)
@@ -34,17 +34,17 @@ class GatewayServiceProvider extends ServiceProvider
         $this->provider = $this->getProvider();
     }
 
-	/**
-	 * Bootstrap the application services.
-	 *
-	 * @return void
-	 */
-	public function boot()
-	{
+    /**
+     * Bootstrap the application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
         if (method_exists($this->provider, 'boot')) {
             return $this->provider->boot();
         }
-	}
+    }
 
     /**
      * Return ServiceProvider according to Laravel version
@@ -54,21 +54,21 @@ class GatewayServiceProvider extends ServiceProvider
     private function getProvider()
     {
         if (version_compare(\Illuminate\Foundation\Application::VERSION, '5.0', '<')) {
-            $provider = 'MahdiIDea\Gateway\GatewayServiceProviderLaravel4';
+            $provider = GatewayServiceProviderLaravel4::class;
         } else {
-            $provider = 'MahdiIDea\Gateway\GatewayServiceProviderLaravel5';
+            $provider = GatewayServiceProviderLaravel5::class;
         }
 
         return new $provider($this->app);
     }
 
-	/**
-	 * Register the application services.
-	 *
-	 * @return void
-	 */
-	public function register()
-	{
-	    return $this->provider->register();
-	}
+    /**
+     * Register the application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        return $this->provider->register();
+    }
 }

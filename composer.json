@@ -51,18 +51,18 @@
   },
   "autoload": {
     "psr-4": {
-      "mahdiidea\\Gateway\\": "src/",
-      "mahdiidea\\Gateway\\Tests\\": "tests/"
+      "MahdiIDea\\Gateway\\": "src/",
+      "MahdiIDea\\Gateway\\Tests\\": "tests/"
     }
   },
   "minimum-stability": "dev",
   "extra": {
     "laravel": {
       "providers": [
-        "mahdiidea\\Gateway\\GatewayServiceProvider"
+        "MahdiIDea\\Gateway\\GatewayServiceProvider"
       ],
       "aliases": {
-        "Gateway": "mahdiidea\\Gateway\\Gateway"
+        "Gateway": "MahdiIDea\\Gateway\\Gateway"
       }
     }
   }
