@@ -1,8 +1,8 @@
 <?php
 
-namespace Larabookir\Gateway\Sadad;
+namespace MahdiIDea\Gateway\Sadad;
 
 
-use Larabookir\Gateway\Exceptions\BankException;
+use MahdiIDea\Gateway\Exceptions\BankException;
 
 class SadadException extends BankException {}

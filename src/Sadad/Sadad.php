@@ -1,10 +1,10 @@
 <?php
 
-namespace Larabookir\Gateway\Sadad;
+namespace MahdiIDea\Gateway\Sadad;
 
 use SoapClient;
-use Larabookir\Gateway\PortAbstract;
-use Larabookir\Gateway\PortInterface;
+use MahdiIDea\Gateway\PortAbstract;
+use MahdiIDea\Gateway\PortInterface;
 
 class Sadad extends PortAbstract implements PortInterface
 {

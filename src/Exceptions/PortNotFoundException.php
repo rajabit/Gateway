@@ -1,6 +1,6 @@
 <?php
 
-namespace Larabookir\Gateway\Exceptions;
+namespace MahdiIDea\Gateway\Exceptions;
 
 class PortNotFoundException extends GatewayException {
 
